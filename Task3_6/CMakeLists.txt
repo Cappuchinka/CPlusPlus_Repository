@@ -3,4 +3,8 @@ project(Task3_6)
 
 set(CMAKE_CXX_STANDARD 17)
 
-add_executable(Task3_6 main.cpp simpleQueue.h tests.cpp)
+include_directories(src)
+
+add_subdirectory(src)
+add_subdirectory(tests)
+add_subdirectory(lib/googletest)

@@ -66,12 +66,12 @@ namespace simpleQueue
 
         bool isEmpty(); // проверка очереди на пустоту
 
-        void push(const T elem); // положить голову
+        void push(const T& elem); // положить голову
 
         T pop(); // удалить голову
 
-        T first(); // будет первым удалён из очереди
-        T back(); // получить хвост (хвост в очереди, а не хвост по дисциплине)
+        T &first(); // будет первым удалён из очереди
+        T &back(); // получить хвост (хвост в очереди, а не хвост по дисциплине)
 
         void printQueue(std::string type);
 
@@ -104,7 +104,7 @@ namespace simpleQueue
     }
 
     template<typename T>
-    void MySimpleQueue<T>::push(const T elem) {
+    void MySimpleQueue<T>::push(const T& elem) {
         if (queueSize == 0) {
             tail = new QueueItem<T>(elem);
             head = tail;
@@ -117,7 +117,7 @@ namespace simpleQueue
     }
 
     template<typename T>
-    T MySimpleQueue<T>::first() {
+    T &MySimpleQueue<T>::first() {
         if (isEmpty()) {
             throw "Queue is empty.";
         }
@@ -125,7 +125,7 @@ namespace simpleQueue
     }
 
     template<typename T>
-    T MySimpleQueue<T>::back() {
+    T &MySimpleQueue<T>::back() {
         if (isEmpty()) {
             throw "Queue is empty.";
         }
