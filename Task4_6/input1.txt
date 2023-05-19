@@ -1,0 +1,8 @@
+Happy
+Sad
+Good
+Bad
+Nice
+Pretty
+Scared
+Angry
